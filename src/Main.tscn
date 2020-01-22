@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://PossibleSpots.gd" type="Script" id=1]
+[ext_resource path="res://player.png" type="Texture" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 43.151
+
+[node name="Main" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 200
+custom_constants/margin_top = 240
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 240
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PossibleSpots" type="GridContainer" parent="CanvasLayer/MarginContainer"]
+margin_left = 200.0
+margin_top = 240.0
+margin_right = 1600.0
+margin_bottom = 660.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 10
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+[connection signal="new_position" from="CanvasLayer/MarginContainer/PossibleSpots" to="Player" method="_on_PossibleSpots_new_position"]
+[connection signal="starting_position" from="CanvasLayer/MarginContainer/PossibleSpots" to="Player" method="_on_PossibleSpots_starting_position"]

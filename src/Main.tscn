@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://PossibleSpots.gd" type="Script" id=1]
 [ext_resource path="res://player.png" type="Texture" id=2]
 [ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://stages/StageOne.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 43.151
@@ -43,5 +44,9 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource( 1 )
+
+[node name="StageManager" type="Node2D" parent="."]
+
+[node name="StageOne" parent="StageManager" instance=ExtResource( 4 )]
 [connection signal="new_position" from="CanvasLayer/MarginContainer/PossibleSpots" to="Player" method="_on_PossibleSpots_new_position"]
 [connection signal="starting_position" from="CanvasLayer/MarginContainer/PossibleSpots" to="Player" method="_on_PossibleSpots_starting_position"]

@@ -20,7 +20,7 @@ func _physics_process(delta):
 	if global_position.distance_to(cur_target_position) <= 10.0:
 		accel = Vector2()
 		velocity = Vector2()
-	move_and_collide(velocity*delta)
+	velocity = move_and_slide(velocity)
 
 func _on_PossibleSpots_new_position(new_position):
 	cur_target_position = new_position

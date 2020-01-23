@@ -48,5 +48,6 @@ shape = SubResource( 1 )
 [node name="StageManager" type="Node2D" parent="."]
 
 [node name="StageOne" parent="StageManager" instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 1, 1, 0, 6, 1, 0, 9, 0, 0, 65537, 1, 0, 65539, 1, 0, 65540, 1, 0, 65542, 1, 0, 65543, 1, 0, 65545, 1, 0, 131075, 1, 0 )
 [connection signal="new_position" from="CanvasLayer/MarginContainer/PossibleSpots" to="Player" method="_on_PossibleSpots_new_position"]
 [connection signal="starting_position" from="CanvasLayer/MarginContainer/PossibleSpots" to="Player" method="_on_PossibleSpots_starting_position"]

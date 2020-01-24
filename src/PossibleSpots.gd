@@ -12,6 +12,7 @@ var rows = [
 ]
 
 func _ready():
+	emit_signal("starting_position", Vector2(200, 240) + Vector2(140, 140)/2.0)
 	for r in rows:
 		for character in r:
 			var cur_possible_key: PossibleKey = preload("res://PossibleKey.tscn").instance()

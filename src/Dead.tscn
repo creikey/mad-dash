@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="Dead" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InstructionsLabel" type="Label" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "You died. Press escape at any time to restart."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

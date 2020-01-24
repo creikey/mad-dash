@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="StageBase" type="Node2D"]
+position = Vector2( 200, 240 )

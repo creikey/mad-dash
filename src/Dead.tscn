@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://default_theme.tres" type="Theme" id=1]
 
 [node name="Dead" type="Node2D"]
 
@@ -7,6 +9,7 @@
 [node name="InstructionsLabel" type="Label" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
 text = "You died. Press escape at any time to restart."
 align = 1
 valign = 1

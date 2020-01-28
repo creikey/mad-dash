@@ -1,6 +1,6 @@
 extends GridContainer
 
-var frame_counter: int = 0 # waits a few frames before settings player's start position
+signal new_position(new_position)
 
 var rows = [
 	"qwertyuiop",
@@ -9,7 +9,6 @@ var rows = [
 ]
 
 func _ready():
-	get_parent().emit_signal("starting_position", Vector2(200, 240) + Vector2(140, 140)/2.0)
 	for r in rows:
 		for character in r:
 			var cur_possible_key: PossibleKey = preload("res://PossibleKey.tscn").instance()
@@ -19,11 +18,5 @@ func _ready():
 			cur_possible_key.connect("pressed", self, "key_pressed")
 			cur_possible_key.activate()
 
-func _process(delta):
-	frame_counter += 1
-	if frame_counter >= 4:
-		get_parent().emit_signal("starting_position", get_node("Key_q").get_player_position())
-		set_process(false)
-
 func key_pressed(letter, new_position):
-	get_parent().emit_signal("new_position", new_position)
+	emit_signal("new_position", new_position)

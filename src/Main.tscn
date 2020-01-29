@@ -1,10 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://HealthBar.gd" type="Script" id=1]
 [ext_resource path="res://player.png" type="Texture" id=2]
 [ext_resource path="res://Player.gd" type="Script" id=3]
 [ext_resource path="res://StageManager.gd" type="Script" id=5]
 [ext_resource path="res://TimeLabel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://default_theme.tres" type="Theme" id=7]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 43.151
@@ -16,6 +23,22 @@ radius = 43.151
 [node name="StageLabel" parent="UI" instance=ExtResource( 6 )]
 theme = ExtResource( 7 )
 text = "Stage 1"
+
+[node name="HealthBar" type="ProgressBar" parent="UI"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 650.0
+margin_bottom = 77.0
+theme = ExtResource( 7 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+max_value = 4.0
+value = 4.0
+percent_visible = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StageManager" type="Node2D" parent="."]
 script = ExtResource( 5 )
@@ -44,3 +67,4 @@ smoothing_speed = 2.0
 [connection signal="tween_all_completed" from="StageManager/StageTransitionTween" to="Player" method="_on_StageTransitionTween_tween_all_completed"]
 [connection signal="tween_all_completed" from="StageManager/StageTransitionTween" to="StageManager" method="_on_StageTransitionTween_tween_all_completed"]
 [connection signal="tween_started" from="StageManager/StageTransitionTween" to="Player" method="_on_StageTransitionTween_tween_started"]
+[connection signal="area_entered" from="Player" to="Player" method="_on_Player_area_entered"]

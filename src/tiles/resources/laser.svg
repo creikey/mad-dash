@@ -15,10 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   sodipodi:docname="circle.svg"
-   inkscape:export-filename="/home/creikey/Documents/projects/mad-dash/src/tiles/resources/circle.png"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96">
+   sodipodi:docname="laser.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -28,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.0678571"
-     inkscape:cx="47.201608"
-     inkscape:cy="64.291024"
+     inkscape:zoom="3.959798"
+     inkscape:cx="26.84005"
+     inkscape:cy="88.370162"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -41,21 +38,22 @@
      inkscape:window-maximized="1"
      units="px"
      inkscape:pagecheckerboard="true"
-     inkscape:snap-global="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     gridtolerance="10"
+     inkscape:snap-page="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:snap-center="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-paths="true"
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-edge-midpoints="true"
-     inkscape:snap-bbox-midpoints="true"
-     inkscape:snap-nodes="true"
-     inkscape:object-paths="true"
-     inkscape:snap-intersection-paths="true"
-     inkscape:snap-smooth-nodes="true"
-     inkscape:snap-midpoints="true"
-     inkscape:snap-object-midpoints="true"
-     inkscape:snap-center="true"
-     inkscape:snap-text-baseline="true"
-     inkscape:snap-page="true">
+     inkscape:snap-bbox-midpoints="true">
     <inkscape:grid
        type="xygrid"
        id="grid815"
@@ -79,11 +77,12 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-259.95831)">
-    <circle
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.23624611"
-       id="path816"
-       cx="18.520834"
-       cy="278.47916"
-       r="16.53723" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.37417731"
+       id="rect1456"
+       width="18.520832"
+       height="9.260417"
+       x="9.260417"
+       y="273.84894" />
   </g>
 </svg>

@@ -18,14 +18,15 @@ func next_stage(new_stage_number):
 	
 	last_stage = cur_stage
 	
-	last_stage.disabled = true
-	
 	cur_stage = spawn_stage(new_stage_number)
+	
+	cur_stage.disabled = true
+	last_stage.disabled = true
 
 	var base_position: Vector2 = cur_stage.global_position
 	
-	$StageTransitionTween.interpolate_property(cur_stage, "global_position", base_position + Vector2(width, 0.0), base_position, 1.0, Tween.TRANS_CUBIC, Tween.EASE_OUT)
-	$StageTransitionTween.interpolate_property(last_stage, "global_position", base_position, base_position - Vector2(width, 0.0), 1.0, Tween.TRANS_CUBIC, Tween.EASE_OUT)
+	$StageTransitionTween.interpolate_property(cur_stage, "global_position", base_position + Vector2(width, 0.0), base_position, 0.3, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	$StageTransitionTween.interpolate_property(last_stage, "global_position", base_position, base_position - Vector2(width, 0.0), 0.3, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	$StageTransitionTween.start()
 
 func spawn_stage(stage_number) -> Node2D:
@@ -38,3 +39,4 @@ func _on_StageTransitionTween_tween_all_completed():
 	if last_stage != null:
 		last_stage.queue_free()
 		last_stage = null
+	cur_stage.disabled = false

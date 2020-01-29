@@ -1,6 +1,8 @@
 extends GridContainer
 
-signal new_position(new_position)
+const player_state = preload("res://player_state.tres")
+
+var key_size: Vector2 = Vector2(140.0, 140.0)
 
 var rows = [
 	"qwertyuiop",
@@ -19,4 +21,6 @@ func _ready():
 			cur_possible_key.activate()
 
 func key_pressed(letter, new_position):
-	emit_signal("new_position", new_position)
+	if get_parent().disabled:
+		return
+	player_state.cur_target_position = new_position

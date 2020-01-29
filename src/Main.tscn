@@ -17,10 +17,10 @@ radius = 43.151
 theme = ExtResource( 7 )
 text = "Stage 1"
 
-[node name="GameWorld" type="CanvasLayer" parent="."]
-
 [node name="StageManager" type="Node2D" parent="."]
 script = ExtResource( 5 )
+
+[node name="StageTransitionTween" type="Tween" parent="StageManager"]
 
 [node name="Player" type="Area2D" parent="." groups=[
 "goal_piece",
@@ -41,3 +41,6 @@ limit_right = 1800
 limit_bottom = 900
 smoothing_enabled = true
 smoothing_speed = 2.0
+[connection signal="tween_all_completed" from="StageManager/StageTransitionTween" to="Player" method="_on_StageTransitionTween_tween_all_completed"]
+[connection signal="tween_all_completed" from="StageManager/StageTransitionTween" to="StageManager" method="_on_StageTransitionTween_tween_all_completed"]
+[connection signal="tween_started" from="StageManager/StageTransitionTween" to="Player" method="_on_StageTransitionTween_tween_started"]

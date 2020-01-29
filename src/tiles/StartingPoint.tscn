@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://tiles/resources/circle.png" type="Texture" id=1]
+
+[node name="StartingPoint" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.858824, 0.541176, 0.0470588, 1 )
+texture = ExtResource( 1 )
+centered = false

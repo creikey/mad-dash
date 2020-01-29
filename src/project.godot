@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "PossibleKey",
 "language": "GDScript",
 "path": "res://PossibleKey.gd"
+}, {
+"base": "Node2D",
+"class": "StageBase",
+"language": "GDScript",
+"path": "res://StageBase.gd"
 } ]
 _global_script_class_icons={
-"PossibleKey": ""
+"PossibleKey": "",
+"StageBase": ""
 }
 
 [application]

@@ -3,7 +3,7 @@
 [ext_resource path="res://StageBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/Goal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tiles/StartingPoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://tiles/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://tiles/EnemySpawner.tscn" type="PackedScene" id=4]
 
 [node name="StageOne" instance=ExtResource( 1 )]
 
@@ -12,5 +12,12 @@ position = Vector2( 1260, 0 )
 
 [node name="StartingPoint" parent="Tiles" index="1" instance=ExtResource( 3 )]
 
-[node name="Enemy" parent="Tiles" index="2" instance=ExtResource( 4 )]
-position = Vector2( 560, 140 )
+[node name="EnemySpawner" parent="Tiles" index="2" instance=ExtResource( 4 )]
+position = Vector2( 840, 420 )
+rotation = -3.14159
+chance = 1.0
+
+[node name="EnemySpawner2" parent="Tiles" index="3" instance=ExtResource( 4 )]
+position = Vector2( 1120, 280 )
+rotation = 6.28318
+chance = 1.0
